@@ -1,4 +1,4 @@
-package demo;
+package JdbcDemo;
 
 public class Student {
 

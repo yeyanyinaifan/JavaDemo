@@ -1,4 +1,4 @@
-package demo;
+package JdbcDemo;
 
 import java.sql.*;
 import java.util.ArrayList;
