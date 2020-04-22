@@ -1,6 +1,6 @@
 # 今日内容
 	1. 数据库连接池
-
+	
 	2. Spring JDBC : JDBC Template
 
 
@@ -8,17 +8,17 @@
 ## 数据库连接池
 	1. 概念：其实就是一个容器(集合)，存放数据库连接的容器。
 		    当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问完之后，会将连接对象归还给容器。
-
+	
 	2. 好处：
 		1. 节约资源
 		2. 用户访问高效
-
+	
 	3. 实现：
 		1. 标准接口：DataSource   javax.sql包下的
 			1. 方法：
 				* 获取连接：getConnection()
 				* 归还连接：Connection.close()。如果连接对象Connection是从连接池中获取的，那么调用Connection.close()方法，则不会再关闭连接了。而是归还连接
-
+	
 		2. 一般我们不去实现它，有数据库厂商来实现
 			1. C3P0：数据库连接池技术
 			2. Druid：数据库连接池实现技术，由阿里巴巴提供的
@@ -31,7 +31,7 @@
 			2. 定义配置文件：
 				* 名称： c3p0.properties 或者 c3p0-config.xml
 				* 路径：直接将文件放在src目录下即可。
-
+	
 			3. 创建核心对象 数据库连接池对象 ComboPooledDataSource
 			4. 获取连接： getConnection
 		* 代码：
@@ -67,8 +67,8 @@
 
 
 		* 代码：
-			public class JDBCUtils {
-
+			public class JDBCUtils	 {
+	
 			    //1.定义成员变量 DataSource
 			    private static DataSource ds ;
 			
@@ -115,11 +115,13 @@
 			
 			       close(null,stmt,conn);
 			    }
-			
-			
+
+
+​			
 			    public static void close(ResultSet rs , Statement stmt, Connection conn){
-			
-			
+
+
+​			
 			        if(rs != null){
 			            try {
 			                rs.close();
@@ -127,8 +129,9 @@
 			                e.printStackTrace();
 			            }
 			        }
-			
-			
+
+
+​			
 			        if(stmt != null){
 			            try {
 			                stmt.close();
@@ -162,7 +165,7 @@
 		1. 导入jar包
 		2. 创建JdbcTemplate对象。依赖于数据源DataSource
 			* JdbcTemplate template = new JdbcTemplate(ds);
-
+	
 		3. 调用JdbcTemplate的方法来完成CRUD的操作
 			* update():执行DML语句。增、删、改语句
 			* queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合
@@ -175,7 +178,7 @@
 					* new BeanPropertyRowMapper<类型>(类型.class)
 			* queryForObject：查询结果，将结果封装为对象
 				* 一般用于聚合函数的查询
-
+	
 		4. 练习：
 			* 需求：
 				1. 修改1号数据的 salary 为 10000
@@ -185,7 +188,7 @@
 				5. 查询所有记录，将其封装为List
 				6. 查询所有记录，将其封装为Emp对象的List集合
 				7. 查询总记录数
-
+	
 			* 代码：
 				
 				import cn.itcast.domain.Emp;
@@ -204,8 +207,9 @@
 				public class JdbcTemplateDemo2 {
 				
 				    //Junit单元测试，可以让方法独立执行
-				
-				
+
+
+​				
 				    //1. 获取JDBCTemplate对象
 				    private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
 				    /**
@@ -301,8 +305,9 @@
 				                return emp;
 				            }
 				        });
-				
-				
+
+
+​				
 				        for (Emp emp : list) {
 				            System.out.println(emp);
 				        }
