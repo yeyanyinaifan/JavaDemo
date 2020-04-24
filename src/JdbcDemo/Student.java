@@ -2,16 +2,16 @@ package JdbcDemo;
 
 public class Student {
 
-    private long Id;
+    private Integer Id;
     private String Username;
-    private int Math;
-    private int English;
-    private int Chinese;
+    private Integer Math;
+    private Integer English;
+    private Integer Chinese;
 
     public Student() {
     }
 
-    public Student(long id, String username, int math, int english, int chinese) {
+    public Student(Integer id, String username, Integer math, Integer english, Integer chinese) {
         Id = id;
         Username = username;
         Math = math;
@@ -19,11 +19,11 @@ public class Student {
         Chinese = chinese;
     }
 
-    public long getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         Id = id;
     }
 
@@ -35,27 +35,27 @@ public class Student {
         Username = username;
     }
 
-    public int getMath() {
+    public Integer getMath() {
         return Math;
     }
 
-    public void setMath(int math) {
+    public void setMath(Integer math) {
         Math = math;
     }
 
-    public int getEnglish() {
+    public Integer getEnglish() {
         return English;
     }
 
-    public void setEnglish(int english) {
+    public void setEnglish(Integer english) {
         English = english;
     }
 
-    public int getChinese() {
+    public Integer getChinese() {
         return Chinese;
     }
 
-    public void setChinese(int chinese) {
+    public void setChinese(Integer chinese) {
         Chinese = chinese;
     }
 
