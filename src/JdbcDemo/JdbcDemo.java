@@ -71,7 +71,7 @@ public class JdbcDemo {
             Student student = null;
             list = new ArrayList<>();
             while (res.next()) {
-                long id = res.getLong("Id");
+                int id = res.getInt("Id");
                 String username = res.getString("Username");
                 int math = res.getInt("Math");
                 int english = res.getInt("English");
