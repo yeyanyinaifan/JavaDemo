@@ -37,27 +37,27 @@ public class HttpServletDemo extends HttpServlet {
          */
         //1. 获取请求方式 ：GET
         String method = req.getMethod();
-        System.out.println(method);
+        System.out.println("获取请求方式：" + method);
         //2.(*)获取虚拟目录：
         String contextPath = req.getContextPath();
-        System.out.println(contextPath);
+        System.out.println("获取虚拟目录：" + contextPath);
         //3. 获取Servlet路径：/HttpServlet
         String servletPath = req.getServletPath();
-        System.out.println(servletPath);
+        System.out.println("获取Servlet路径：" + servletPath);
         //4. 获取get方式请求参数
         String queryString = req.getQueryString();
-        System.out.println(queryString);
+        System.out.println("请求参数：" + queryString);
         //5.(*)获取请求URI：/HttpServlet
         String requestURI = req.getRequestURI();
         StringBuffer requestURL = req.getRequestURL();
-        System.out.println(requestURI);
-        System.out.println(requestURL);
+        System.out.println("获取请求URI：" + requestURI);
+        System.out.println("获取请求URL：" + requestURL);
         //6. 获取协议及版本：HTTP/1.1
         String protocol = req.getProtocol();
-        System.out.println(protocol);
+        System.out.println("获取协议及版本：" + protocol);
         //7. 获取客户机的IP地址：
         String remoteAddr = req.getRemoteAddr();
-        System.out.println(remoteAddr);
+        System.out.println("获取客户机的IP地址：" + remoteAddr);
 
         //1.获取所有请求头名称
         Enumeration<String> headerNames = req.getHeaderNames();
@@ -66,7 +66,7 @@ public class HttpServletDemo extends HttpServlet {
             String name = headerNames.nextElement();
             //根据名称获取请求头的值
             String value = req.getHeader(name);
-            System.out.println(name+"---"+value);
+            System.out.println("请求头：" + name+"---"+value);
         }
         String agent = req.getHeader("user-agent");
         //判断agent的浏览器版本
@@ -81,7 +81,7 @@ public class HttpServletDemo extends HttpServlet {
         //演示获取请求头数据:referer
 
         String referer = req.getHeader("referer");
-        System.out.println(referer);//http://localhost/demo/index.html
+        System.out.println("请求referer数据" + referer);//http://localhost/demo/index.html
 
         //防盗链
         if(referer != null ){

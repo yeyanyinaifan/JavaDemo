@@ -10,6 +10,8 @@ import java.io.IOException;
 public class AnotherHttpServletDemo extends HttpServletDemo{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("AnotherHttpServlet doGet");
+        System.out.println("========================");
         this.doPost(req, resp);
     }
 
@@ -18,6 +20,6 @@ public class AnotherHttpServletDemo extends HttpServletDemo{
         System.out.println("AnotherHttpServlet doPost");
         //获取数据
         Object msg = req.getAttribute("msg");
-        System.out.println(msg);
+        System.out.println("msg:" + msg);
     }
 }
