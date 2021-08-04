@@ -26,6 +26,7 @@ public class test {
                 key = s.charAt(i);
                 count = 1;
             }
+
         }
         System.out.println(result);
     }
