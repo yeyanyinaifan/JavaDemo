@@ -1,0 +1,9 @@
+14-Jul-2020 18:33:42.863 警告 [main] org.apache.catalina.core.StandardServer.await 收到无效的关闭命令[]
+14-Jul-2020 18:35:55.615 警告 [main] org.apache.catalina.core.StandardServer.await 收到无效的关闭命令[]
+14-Jul-2020 18:37:01.184 警告 [main] org.apache.catalina.core.StandardServer.await 收到无效的关闭命令[]
+14-Jul-2020 18:38:15.944 警告 [main] org.apache.catalina.core.StandardServer.await 收到无效的关闭命令[]
+14-Jul-2020 18:38:52.635 信息 [main] org.apache.catalina.core.StandardServer.await 通过关闭端口接收到有效的关闭命令。正在停止服务器实例。
+14-Jul-2020 18:38:52.636 信息 [main] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8080"]
+14-Jul-2020 18:38:52.653 信息 [main] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+14-Jul-2020 18:38:52.679 信息 [main] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8080"]
+14-Jul-2020 18:38:52.684 信息 [main] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8080"]
